@@ -26,11 +26,6 @@ h1 {
   font-size: clamp(1.5rem, 2.5vw, 3rem);
 }
 
-audio {
-  filter: sepia(20%) saturate(70%) grayscale(100%) invert(90%); /* Inverts to dark mode */
-  border-radius: 8px;
-  width: 100%;
-}
 
 #myform{
   padding-top: 20px;
