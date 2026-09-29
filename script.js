@@ -1,17 +1,20 @@
-const button = document.getElementById("send");
+
+const sendBtn = document.querySelectorAll(".send")[0]; 
+const showInfoBtn = document.querySelectorAll(".send")[1]; 
+const outputForm = document.getElementById("myFormOutput");
+
 const greeting = document.getElementById("name");
 const details = document.getElementById("details");
-
-
 const formContainer = document.getElementsByClassName("form-container")[0];
 
 
-const allInputs = document.getElementsByTagName("input");
-
-button.addEventListener("click", function () {
 
 
-    const name = document.querySelector("#getName").value.trim() || "stranger";
+
+let userData = null;
+
+sendBtn.addEventListener("click", function () {
+    const name = document.querySelector("#getName").value.trim();
     const age = document.querySelector("#getAge").value.trim();
     const birthday = document.querySelector("#getBirthDate").value;
     const school = document.querySelector("#getSchool").value.trim();
@@ -20,7 +23,6 @@ button.addEventListener("click", function () {
     const grade = document.querySelector("#getGrade").value;
     const bio = document.querySelector("#getBio").value.trim();
     const color = document.querySelector("#favcolor").value;
-
     const selectedSex = document.querySelector('input[name="sex"]:checked');
 
 
@@ -29,29 +31,45 @@ button.addEventListener("click", function () {
         return;
     }
 
-    let sexValue = "Not provided";
-    if (selectedSex) {
-        sexValue = selectedSex.value;
+  
+    userData = {
+        name: name || "stranger",
+        age: age || "Not provided",
+        birthday: birthday || "Not provided",
+        sex: selectedSex ? selectedSex.value : "Not provided",
+        school: school || "Not provided",
+        talent: talent || "Not provided",
+        email: email || "Not provided",
+        grade: grade || "Not provided",
+        bio: bio || "Not provided",
+        color: color
+    };
+
+    alert("Info sent!");
+});
+
+showInfoBtn.addEventListener("click", function () {
+  
+    if (!userData) {
+        alert("Please fill out the form and click 'Send' first!");
+        return;
     }
 
-
-    greeting.textContent = `Hello, ${name}!`;
+    greeting.textContent = `Hello, ${userData.name}!`;
 
     details.innerHTML = `
-    
-        <li>Age: ${age || "Not provided"}</li>
-        <li>Birthday: ${birthday || "Not provided"}</li>
-        <li>Sex: ${sexValue}</li>
-        <li>School: ${school || "Not provided"}</li>
-        <li>Talent: ${talent || "Not provided"}</li>
-        <li>Email: ${email || "Not provided"}</li>
-        <li>Grade level: ${grade || "Not provided"}</li>
-        <li>About you: ${bio || "Not provided"}</li>
-        <li>Favorite color: ${color}</li>
+        <li>Age: ${userData.age}</li>
+        <li>Birthday: ${userData.birthday}</li>
+        <li>Sex: ${userData.sex}</li>
+        <li>School: ${userData.school}</li>
+        <li>Talent: ${userData.talent}</li>
+        <li>Email: ${userData.email}</li>
+        <li>Grade level: ${userData.grade}</li>
+        <li>About you: ${userData.bio}</li>
+        <li>Favorite color: ${userData.color}</li>
     `;
 
 
-    formContainer.style.borderColor = color;
 
-    console.log(`This form has ${allInputs.length} input fields.`);
+
 });
