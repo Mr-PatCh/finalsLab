@@ -33,7 +33,7 @@ audio {
 }
 
 #myform{
-  margin-top: 20px;
+  padding-top: 20px;
 }
 .form-container {
   display: flex;
@@ -51,11 +51,9 @@ audio {
   border-radius: 10px;
 }
 
-#send {
-  
+.send {
   position: relative;
-  width: 35%;
-  height: 50px;
+  height: 30px;
   color: aliceblue;
   border: none;
   border-radius: 10px;
@@ -111,7 +109,7 @@ audio {
   z-index: 0;
 }
 
-#send::after {
+.send::after {
   content: "";
   position: absolute;
   background-image: linear-gradient(
@@ -173,9 +171,9 @@ form::before {
 h1 {
   color: aliceblue;
 }
-/* form button {
+form button {
   width: 100px;
-} */
+}
 
 fieldset {
   color: aliceblue;
