@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINALS</title>
+
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+
+
+
+    <main class="container">
+        <img src="anime_17.jpg" alt="">
+
+
+        <div class="blur">
+            <div class="form-container">
+
+                <form action="" id="myForm">
+                    <h1>USER INPUT FORM</h1>
+                    <input type="text" class="input-styling" id="getName" placeholder="Enter your name: ">
+                    <input type="text" class="input-styling" id="getAge" placeholder="Enter your age: ">
+
+                    <div class="birthday field">
+                        <label for="birthday">Enter your birthday:</label>
+
+                        <input type="date" id="getBirthDate" placeholder="Enter your Birth date: ">
+                    </div>
+                    <fieldset class="radio-wrapper">
+                        <legend>Please choose your sex</legend>
+                        <div class="radio">
+                            <input type="radio" name="sex" id="male" value="Male">
+                            <label for="male">Male</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" name="sex" id="female" value="Female">
+                            <label for="female">Female</label>
+                        </div>
+                        <div class="radio">
+                            <input type="radio" name="sex" id="others" value="Others">
+                            <label for="others">Others</label>
+                        </div>
+                    </fieldset>
+
+
+
+
+                    <input type="text" class="input-styling" id="getSchool" placeholder="Enter your school: ">
+                    <input type="text" class="input-styling" id="getTalent" placeholder="Enter your talent: ">
+
+                    <input type="email" class="input-styling" id="getEmail" placeholder="Enter your email: ">
+
+
+                    <select class="input-styling" id="getGrade">
+                        <option value="" disabled selected>Select your grade level</option>
+                        <option value="grade-11">Grade 11</option>
+                        <option value="grade-12">Grade 12</option>
+                        <option value="college">College</option>
+                    </select>
+
+
+                    <textarea class="input-styling" id="getBio" rows="3"
+                        placeholder="Tell us about yourself: "></textarea>
+
+                    <div class="color-picker">
+                        <label for="favcolor">Select your favorite color:</label>
+                        <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+                    </div>
+
+                    <button id="send" type="button">Send</button>
+                </form>
+
+
+                <form action="" id="myFormOutput">
+                    <label for="name">
+                        <h1 id="name"></h1>
+                    </label>
+                    <div id="output">
+                        <h3 style="margin-bottom: 10px;">Information:</h3>
+                        <ul id="details"></ul>
+                    </div>
+
+                </form>
+
+
+            </div>
+        </div>
+
+
+    </main>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
