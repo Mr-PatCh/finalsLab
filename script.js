@@ -1,7 +1,3 @@
-
-const bgMusic = document.getElementById("bgMusic");
-bgMusic.volume = 0.3;
-
 const button = document.getElementById("send");
 const greeting = document.getElementById("name");
 const details = document.getElementById("details");
